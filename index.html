@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fuga do Bug</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="term">
+    <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+    <span class="file">fuga.js</span>
+    <span class="school">CETI PROF. JOSÉ AMÁVEL</span>
+  </div>
+
+  <div class="stage" id="stage">
+    <canvas id="cv" aria-label="Pista do jogo Fuga do Bug"></canvas>
+
+    <div class="hud" id="hud" hidden>
+      <div class="hud-left">
+        <span class="chipbox"><b id="hudScore">0</b><small>pontos</small></span>
+        <span class="chipbox gold"><b id="hudChips">0</b><small>chips</small></span>
+        <span class="chipbox shield" id="hudShield" hidden><b>🛡️</b><small>escudo</small></span>
+      </div>
+      <div class="hud-right">
+        <button type="button" class="icon" id="btnSound" aria-label="Som ligado">🔊</button>
+        <button type="button" class="icon" id="btnPause" aria-label="Pausar">⏸</button>
+      </div>
+    </div>
+
+    <div class="overlay" id="startScreen">
+      <div class="box">
+        <p class="eyebrow">Desenvolvimento de Sistemas</p>
+        <h1>Fuga <span>do Bug</span></h1>
+        <p class="lead">Corra pelo circuito, desvie dos obstáculos e colete chips. Quanto mais longe, mais rápido fica!</p>
+        <ul class="legend">
+          <li><i class="sw bug"></i><span><b>Bug</b> pule por cima</span></li>
+          <li><i class="sw fire"></i><span><b>Firewall</b> deslize por baixo</span></li>
+          <li><i class="sw server"></i><span><b>Servidor</b> troque de pista</span></li>
+          <li><i class="sw coin"></i><span><b>Chip</b> vale 10 pontos</span></li>
+        </ul>
+        <div class="controls">
+          <p><b>Celular:</b> deslize o dedo ← → para trocar de pista, ↑ para pular e ↓ para deslizar.</p>
+          <p><b>Computador:</b> use as setas do teclado (ou W A S D).</p>
+        </div>
+        <button type="button" class="play" id="btnPlay">▶ Jogar</button>
+        <p class="best" id="bestStart">Recorde: 0</p>
+      </div>
+    </div>
+
+    <div class="overlay" id="pauseScreen" hidden>
+      <div class="box small">
+        <h2>Pausado</h2>
+        <button type="button" class="play" id="btnResume">▶ Continuar</button>
+      </div>
+    </div>
+
+    <div class="overlay" id="overScreen" hidden>
+      <div class="box">
+        <p class="eyebrow" id="overTag">Fim de jogo</p>
+        <h2 id="overTitle">O bug te pegou!</h2>
+        <div class="stats">
+          <div><b id="overScore">0</b><small>pontos</small></div>
+          <div><b id="overDist">0 m</b><small>distância</small></div>
+          <div><b id="overChips">0</b><small>chips</small></div>
+        </div>
+        <p class="best" id="overBest">Recorde: 0</p>
+        <button type="button" class="play" id="btnAgain">↻ Jogar de novo</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="foot">Deslize na pista para jogar · Setas no computador · Espaço também pula</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
